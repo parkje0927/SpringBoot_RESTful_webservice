@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * 4xx => Client 문제
  * 5xx => Server 문제
  *
- * 이 예외 클래스는 500번대가 아니라 HttpStatus.NOT_FOUND 에러를 나타나게 한다.
- * -> 404 에러코드
+ * - 이 예외 클래스는 500번대가 아니라 HttpStatus.NOT_FOUND 에러를 나타나게 한다.
+ * => 404 에러코드
+ *
+ * - ExceptionResponse class, CustomizedResponseEntityExceptionHandler class
+ * => 전달하고자 하는 내용만 전달 가능
  */
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
