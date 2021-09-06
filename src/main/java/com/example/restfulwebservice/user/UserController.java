@@ -23,7 +23,16 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable int id) {
-        return service.findOne(id);
+        User user = service.findOne(id);
+
+        /**
+         * trace 에 에러가 난 코드 부분이 다 노출되면 보안상 위험하므로 해당 부분을 수정해야한다.
+         */
+        if (user == null) {
+            throw new UserNotFoundException(String.format("ID[%s] not found", id));
+        }
+
+        return user;
     }
 
     @PostMapping("/users")
@@ -45,5 +54,5 @@ public class UserController {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
-    
+
 }
