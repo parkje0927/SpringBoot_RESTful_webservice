@@ -33,4 +33,9 @@
 ## RestController
 - @Controller + @ResponseBody
 - View 를 갖지 않는 REST Data (JSON / XML) 를 반환
-- 
+
+## Internationalization
+- 하나의 출력값을 여러가지 언어로 표시되게 해주는 기능
+- 제공하고자 하는 언어로 미리 준비한 다음에 언어 설정에 따라 적절한 언어로 표시
+- 기본 설정이 영어면 영어 메세지가 보임
+- 다국어 처리에 필요한 bean 을 등록 

@@ -6,12 +6,7 @@ logging:
   level:
     org.springframework: INFO
 
-#spring:
-#  datasource:
-#    url: 'jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE'
-#    driverClassName: org.h2.Driver
-#    username: sa
-#    password:
-#  h2:
-#    console:
-#      enabled: true
+# 다국어 internationalization
+spring:
+  messages:
+    basename: messages
