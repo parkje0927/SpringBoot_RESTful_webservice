@@ -19,9 +19,9 @@ public class UserDaoService {
 
     //초기값 생성
     static {
-        users.add(new User(1, "jung hyun", new Date()));
-        users.add(new User(2, "park", new Date()));
-        users.add(new User(3, "kim", new Date()));
+        users.add(new User(1, "jung hyun", new Date(), "pass1", "123456-1234567"));
+        users.add(new User(2, "park", new Date(), "pass2", "123456-1234567"));
+        users.add(new User(3, "kim", new Date(), "pass3", "123456-1234567"));
     }
 
     public List<User> findAll() {
