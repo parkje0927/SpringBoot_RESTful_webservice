@@ -45,7 +45,18 @@ public class AdminUserController {
         return mapping;
     }
 
-    @GetMapping("/v1/users/{id}")
+    /**
+     * 1) URI 를 통한 Version Control
+     * - @GetMapping("/v1/users/{id}")
+     *
+     * 2) Request Parameter 를 이용한 Version Control
+     * - @GetMapping(value = "/users/{id}", params = "version=1")
+     *
+     * 3) Header 를 이용한 Version Control
+     * - 임의로 만들어주면 된다.
+     * - @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+     */
+    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id) {
         User user = service.findOne(id);
 
@@ -70,7 +81,19 @@ public class AdminUserController {
         return mapping;
     }
 
-    @GetMapping("/v2/users/{id}")
+    /**
+     * 1) URI 를 통한 Version Control
+     * - @GetMapping("/v2/users/{id}")
+     *
+     * 2) Request Parameter 를 이용한 Version Control
+     * - @GetMapping(value = "/users/{id}", params = "version=2")
+     * - ex) http://localhost:8088/admin/users/2/?version=2
+     *
+     * 3) Header 를 이용한 Version Control
+     * - 임의로 만들어주면 된다.
+     * - @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+     */
+    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id) {
         User user = service.findOne(id);
 
