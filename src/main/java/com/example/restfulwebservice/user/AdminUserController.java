@@ -55,8 +55,12 @@ public class AdminUserController {
      * 3) Header 를 이용한 Version Control
      * - 임의로 만들어주면 된다.
      * - @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+     *
+     * 4) 마임타입 이용
+     * - 일종의 파일 지정 형식
+     * - @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appV1+json")
      */
-    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+    @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appV1+json")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id) {
         User user = service.findOne(id);
 
@@ -93,8 +97,12 @@ public class AdminUserController {
      * 3) Header 를 이용한 Version Control
      * - 임의로 만들어주면 된다.
      * - @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+     *
+     * 4) 마임타입 이용
+     * - 일종의 파일 지정 형식
+     * - @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appV2+json")
      */
-    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+    @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appV2+json")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id) {
         User user = service.findOne(id);
 
