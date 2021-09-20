@@ -51,3 +51,12 @@
 - 과도하게 URI 에 많은 정보 주지 않기
 - 적절한 parameter
 - 캐시관련 주의(캐시 삭제 후 재실행 해야할 수 있음)
+
+## HATEOAS 적용
+- Hypermedia As the Engine Of Application State
+- 서버가 클라이언트에게 하이퍼 미디어를 통해 정보를 동적으로 제공해주는 것
+- 현재 리소스와 연관된(호출 가능한) 자원 상태 정보를 제공
+- Level 0 : The Swamp of POX
+- Level 1 : Resources 
+- Level 2 : HTTP Verbs
+- Level 3 : Hypermedia Controls
